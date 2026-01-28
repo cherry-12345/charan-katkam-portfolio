@@ -42,8 +42,15 @@ export default function AboutSection() {
           >
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-                <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-6xl">
-                  👨‍💻
+                <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-700">
+                  <Image
+                    src="/photo.png"
+                    alt="Charan Katkam"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover object-top scale-125"
+                    priority
+                  />
                 </div>
               </div>
               <motion.div

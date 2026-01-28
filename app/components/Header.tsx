@@ -59,8 +59,8 @@ export default function Header() {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-xl border-b border-gray-200 dark:border-gray-800' 
+          : 'bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm'
       }`}
     >
       <div className="container-max section-padding">
@@ -79,13 +79,20 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
+                className={`text-sm font-medium transition-all duration-300 relative ${
                   activeSection === item.id
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-700 dark:text-gray-300'
-                }`}
+                } hover:text-blue-600 dark:hover:text-blue-400`}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
               </button>
             ))}
           </nav>

@@ -28,14 +28,15 @@ export default function ContactSection() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'charankatkam@gmail.com',
-      link: 'mailto:charankatkam@gmail.com'
+      value: 'charancherrykatkam@gmail.com',
+      link: 'mailto:charancherrykatkam@gmail.com'
     },
     {
       icon: '💼',
       label: 'LinkedIn',
-      value: 'linkedin.com/in/charan-katkam',
-      link: 'https://linkedin.com/in/charan-katkam'
+      value: 'linkedin.com/in/charan-katkam-160135259',
+      link: 'https://www.linkedin.com/in/charan-katkam-160135259/',
+      external: true
     },
     {
       icon: '🐙',
@@ -106,8 +107,8 @@ export default function ContactSection() {
                     {info.link ? (
                       <a
                         href={info.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={info.link.startsWith('http') ? '_blank' : undefined}
+                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="text-blue-600 dark:text-blue-400 hover:underline"
                       >
                         {info.value}

@@ -86,8 +86,9 @@ export default function SkillsSection() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                    className={`px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${category.color} text-white cursor-default`}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${category.color} text-white cursor-pointer shadow-md hover:shadow-lg transition-shadow`}
                   >
                     {skill}
                   </motion.span>
@@ -123,8 +124,9 @@ export default function SkillsSection() {
               <motion.div
                 key={skill}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-all cursor-default"
+                whileHover={{ scale: 1.08, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white dark:bg-gray-900 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent hover:border-blue-500/50"
               >
                 <span className="text-gray-800 dark:text-gray-200 font-medium">
                   {skill}

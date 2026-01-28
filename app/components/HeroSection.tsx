@@ -8,18 +8,19 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      scale: 1,
+      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] },
     },
   }
 
@@ -28,18 +29,30 @@ export default function HeroSection() {
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          animate={{ y: [-20, 20, -20] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ 
+            y: [-20, 20, -20],
+            scale: [1, 1.1, 1],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200/30 dark:bg-blue-500/20 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{ y: [20, -20, 20] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ 
+            y: [20, -20, 20],
+            scale: [1, 1.2, 1],
+            rotate: [0, -5, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-200/30 dark:bg-purple-500/20 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{ x: [-30, 30, -30] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ 
+            x: [-30, 30, -30],
+            y: [0, -20, 0],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-1/2 right-1/3 w-48 h-48 bg-pink-200/30 dark:bg-pink-500/20 rounded-full blur-3xl"
         />
       </div>
@@ -53,18 +66,30 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 overflow-hidden"
           >
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <motion.span
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.6, -0.05, 0.01, 0.99] }}
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            >
               Charan Katkam
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-8"
+            className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-8 overflow-hidden"
           >
-            Full Stack Developer | AI & Frontend
+            <motion.span
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }}
+              className="inline-block"
+            >
+              Full Stack Developer | AI & Frontend
+            </motion.span>
           </motion.h2>
 
           <motion.p
