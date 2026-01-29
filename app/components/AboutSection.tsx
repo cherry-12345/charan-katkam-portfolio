@@ -53,13 +53,6 @@ export default function AboutSection() {
                   />
                 </div>
               </div>
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl"
-              >
-                ⚡
-              </motion.div>
             </div>
           </motion.div>
 
