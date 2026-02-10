@@ -4,7 +4,7 @@ A modern, interactive portfolio website built with Next.js, TypeScript, and Tail
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.vercel.app)
+[View Live Portfolio](https://charan-katkam-portfolio.vercel.app/)
 
 ## ✨ Features
 
@@ -154,6 +154,10 @@ npm start
 - **Modern UI:** Clean, professional design
 - **Interactive Elements:** Hover effects and micro-interactions
 
+## Design Rationale
+
+This portfolio follows an Industrial Studio design approach, chosen to reflect clarity, structure, and engineering intent. The interface uses a restrained dark graphite palette with a single cobalt accent to emphasize hierarchy without distraction. Typography is built around the IBM Plex family, combining condensed headlines for authority, a neutral body font for readability, and mono accents for technical context. Spacing and layout prioritize calm vertical rhythm and clear separation between sections, allowing content to breathe and remain scannable. Motion and interaction are used sparingly and purposefully to support navigation and focus rather than visual noise. The overall goal was to create a portfolio that feels deliberate, systems-oriented, and authored, aligning with frontend and UI engineering principles rather than decorative trends.
+
 ## 📱 Mobile Experience
 
 - Touch-friendly navigation
@@ -212,3 +216,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Built with ❤️ by Charan Katkam
+
+_Built with Next.js, Tailwind CSS, and Framer Motion. Deployed on Vercel._
