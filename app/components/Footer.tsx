@@ -43,8 +43,8 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white">
-      <div className="container-max section-padding py-12">
+    <footer className="bg-[color:var(--color-surface)] text-[color:var(--color-text)] border-t border-[color:var(--color-border)]">
+      <div className="container-max section-padding py-16">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <motion.div
@@ -53,10 +53,10 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-medium text-[color:var(--color-text)] tracking-tight">
               Charan Katkam
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-[color:var(--color-muted)] leading-relaxed">
               Full Stack Developer passionate about creating intelligent, 
               user-focused web experiences with modern technologies and AI integration.
             </p>
@@ -69,7 +69,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="p-2 studio-surface rounded-md transition-colors hover:border-[color:var(--color-accent)]"
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
+                    className="text-[color:var(--color-muted)] hover:text-[color:var(--color-text)] transition-colors hover:underline"
                   >
                     {link.name}
                   </a>
@@ -110,7 +110,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h4 className="text-lg font-semibold">Get In Touch</h4>
-            <div className="space-y-2 text-gray-400">
+            <div className="space-y-2 text-[color:var(--color-muted)]">
               <p>📧 charancherrykatkam@gmail.com</p>
               <p>📍 Hyderabad, India</p>
               <p>🎓 B.Tech CSE Student</p>
@@ -120,7 +120,7 @@ export default function Footer() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+              className="inline-flex items-center gap-2 btn-primary text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -136,12 +136,12 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-[color:var(--color-border)] mt-14 pt-10 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm">
+          <p className="text-[color:var(--color-muted)] text-sm">
             © {currentYear} Charan Katkam. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-2 md:mt-0">
+          <p className="text-[color:var(--color-muted)] text-sm mt-2 md:mt-0">
             Built with Next.js, TypeScript & Tailwind CSS
           </p>
         </motion.div>

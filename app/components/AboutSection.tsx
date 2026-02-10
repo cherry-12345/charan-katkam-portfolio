@@ -16,22 +16,22 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
       <div className="container-max section-padding">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-medium text-[color:var(--color-text)] mb-4 tracking-tight">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto"></div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Profile Image */}
           <motion.div
             initial="hidden"
@@ -62,22 +62,22 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="space-y-6"
+            className="space-y-10"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
               I'm a passionate Full Stack Developer with a strong focus on AI integration and modern web technologies. 
               Currently pursuing my B.Tech in Computer Science Engineering at Sreenidhi Institute of Science and Technology, 
               I combine academic knowledge with practical experience to create innovative solutions.
             </p>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
               My expertise spans across frontend frameworks like React and Next.js, backend technologies, 
               and AI/ML implementations. I enjoy building user-centric applications that solve real-world problems 
               while maintaining clean, efficient code and exceptional user experiences.
             </p>
 
             {/* Quick Facts */}
-            <div className="grid sm:grid-cols-3 gap-4 mt-8">
+            <div className="grid sm:grid-cols-3 gap-6 mt-12">
               {quickFacts.map((fact, index) => (
                 <motion.div
                   key={fact.label}
@@ -85,13 +85,13 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition-shadow"
+                  className="studio-surface p-4 rounded-md text-center hover:shadow-lg transition-shadow"
                 >
                   <div className="text-2xl mb-2">{fact.icon}</div>
-                  <div className="font-semibold text-gray-900 dark:text-white text-sm">
+                  <div className="font-semibold text-[color:var(--color-text)] text-xs uppercase tracking-[0.2em] font-mono">
                     {fact.label}
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                  <div className="text-[color:var(--color-muted)] text-sm mt-2">
                     {fact.value}
                   </div>
                 </motion.div>

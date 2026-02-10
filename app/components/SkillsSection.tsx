@@ -6,18 +6,15 @@ export default function SkillsSection() {
   const skillCategories = [
     {
       title: 'Frontend',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
-      color: 'from-blue-500 to-cyan-500'
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'TypeScript']
     },
     {
       title: 'AI / ML',
-      skills: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'Prompt Engineering'],
-      color: 'from-purple-500 to-pink-500'
+      skills: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'Prompt Engineering']
     },
     {
       title: 'Backend & Tools',
-      skills: ['Node.js', 'MySQL', 'Git', 'GitHub', 'VS Code', 'Jupyter', 'REST APIs'],
-      color: 'from-green-500 to-teal-500'
+      skills: ['Node.js', 'MySQL', 'Git', 'GitHub', 'VS Code', 'Jupyter', 'REST APIs']
     }
   ]
 
@@ -37,20 +34,20 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
       <div className="container-max section-padding">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={itemVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-medium text-[color:var(--color-text)] mb-4 tracking-tight">
             Skills & Technologies
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto mb-6"></div>
+          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
             A comprehensive toolkit for building modern, intelligent web applications
           </p>
         </motion.div>
@@ -60,23 +57,22 @@ export default function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-10"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               variants={itemVariants}
-              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              className="studio-surface rounded-md p-6 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mb-4`}>
-                <span className="text-white text-xl font-bold">
-                  {category.title === 'Frontend' ? '🎨' : category.title === 'AI / ML' ? '🤖' : '⚙️'}
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-medium text-[color:var(--color-text)]">
+                  {category.title}
+                </h3>
+                <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-muted)] font-mono">
+                  {category.title === 'Frontend' ? 'UI' : category.title === 'AI / ML' ? 'AI' : 'BE'}
                 </span>
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                {category.title}
-              </h3>
               
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
@@ -88,7 +84,7 @@ export default function SkillsSection() {
                     transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${category.color} text-white cursor-pointer shadow-md hover:shadow-lg transition-shadow`}
+                    className="tag-chip cursor-pointer hover:text-[color:var(--color-text)] hover:border-[color:var(--color-accent)] transition-colors"
                   >
                     {skill}
                   </motion.span>
@@ -104,9 +100,9 @@ export default function SkillsSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="mt-16"
+          className="mt-20"
         >
-          <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">
+          <h3 className="text-2xl font-medium text-center text-[color:var(--color-text)] mb-8">
             Additional Expertise
           </h3>
           
@@ -126,9 +122,9 @@ export default function SkillsSection() {
                 variants={itemVariants}
                 whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent hover:border-blue-500/50"
+                className="studio-surface p-4 rounded-md text-center shadow-md hover:shadow-xl transition-all cursor-pointer hover:border-[color:var(--color-accent)]"
               >
-                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                <span className="text-[color:var(--color-text)] font-medium">
                   {skill}
                 </span>
               </motion.div>

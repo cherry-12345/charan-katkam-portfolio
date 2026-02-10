@@ -35,36 +35,36 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
       <div className="container-max section-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-medium text-[color:var(--color-text)] mb-4 tracking-tight">
             Let's Connect
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto mb-6"></div>
+          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
             Ready to collaborate on your next project? Let's discuss how we can build something amazing together.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-10"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-6">
                 Get In Touch
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              <p className="text-[color:var(--color-muted)] mb-8 leading-relaxed">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a chat about technology and innovation. Feel free to reach out!
               </p>
@@ -79,11 +79,11 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow"
+                  className="flex items-center space-x-4 p-4 studio-surface rounded-md hover:shadow-md transition-shadow"
                 >
                   <div className="text-2xl">{info.icon}</div>
                   <div>
-                    <div className="font-medium text-gray-900 dark:text-white">
+                    <div className="font-medium text-[color:var(--color-text)]">
                       {info.label}
                     </div>
                     {info.link ? (
@@ -91,12 +91,12 @@ export default function ContactSection() {
                         href={info.link}
                         target={info.link.startsWith('http') ? '_blank' : undefined}
                         rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                        className="text-[color:var(--color-accent)] hover:underline"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <div className="text-gray-600 dark:text-gray-400">
+                      <div className="text-[color:var(--color-muted)]">
                         {info.value}
                       </div>
                     )}
@@ -110,12 +110,12 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-xl"
+              className="studio-surface p-6 rounded-md"
             >
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+              <h4 className="text-lg font-medium text-[color:var(--color-text)] mb-3">
                 Download My Resume
               </h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-[color:var(--color-muted)] mb-4">
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
               <motion.a
@@ -138,15 +138,15 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl"
+            className="studio-surface p-8 rounded-md"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-6">
               Send a Message
             </h3>
             
             <form action="https://formspree.io/f/mbdyyqdv" method="POST" className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-xs uppercase tracking-[0.25em] text-[color:var(--color-muted)] font-mono mb-2">
                   Your Name
                 </label>
                 <input
@@ -154,13 +154,13 @@ export default function ContactSection() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
                   placeholder="Enter your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-xs uppercase tracking-[0.25em] text-[color:var(--color-muted)] font-mono mb-2">
                   Email Address
                 </label>
                 <input
@@ -168,13 +168,13 @@ export default function ContactSection() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
                   placeholder="Enter your email"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-xs uppercase tracking-[0.25em] text-[color:var(--color-muted)] font-mono mb-2">
                   Message
                 </label>
                 <textarea
@@ -182,7 +182,7 @@ export default function ContactSection() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors resize-none"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>

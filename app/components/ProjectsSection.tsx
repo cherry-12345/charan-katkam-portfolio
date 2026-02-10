@@ -62,20 +62,20 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="projects" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
       <div className="container-max section-padding">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={itemVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-medium text-[color:var(--color-text)] mb-4 tracking-tight">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto mb-6"></div>
+          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
             A showcase of my technical expertise and problem-solving capabilities across various domains
           </p>
         </motion.div>
@@ -85,25 +85,25 @@ export default function ProjectsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-8"
+          className="grid lg:grid-cols-2 gap-10"
         >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
+              className="studio-surface rounded-md p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
             >
               {/* Project Header */}
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-2">
                     {project.title}
                   </h3>
-                  <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${
+                  <span className={`inline-flex items-center gap-2 px-3 py-1 text-xs uppercase tracking-[0.25em] font-mono rounded-full border ${
                     project.status === 'Completed' 
-                      ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
-                      : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300'
+                      ? 'border-emerald-500/40 text-emerald-400'
+                      : 'border-amber-500/40 text-amber-400'
                   }`}>
                     {project.status}
                   </span>
@@ -114,17 +114,17 @@ export default function ProjectsSection() {
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              <p className="text-[color:var(--color-muted)] mb-6 leading-relaxed">
                 {project.description}
               </p>
 
               {/* Features */}
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
+                <h4 className="font-medium text-[color:var(--color-text)] mb-3">Key Features:</h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {project.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 flex-shrink-0"></span>
+                    <li key={featureIndex} className="flex items-center text-sm text-[color:var(--color-muted)]">
+                      <span className="w-2 h-2 bg-[color:var(--color-accent)] rounded-full mr-2 flex-shrink-0"></span>
                       {feature}
                     </li>
                   ))}
@@ -133,12 +133,12 @@ export default function ProjectsSection() {
 
               {/* Tech Stack */}
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Technologies:</h4>
+                <h4 className="font-medium text-[color:var(--color-text)] mb-3">Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full"
+                      className="tag-chip"
                     >
                       {tech}
                     </span>
@@ -152,7 +152,7 @@ export default function ProjectsSection() {
                   href={project.github}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-1 bg-gray-900 dark:bg-gray-700 text-white text-center py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors font-medium"
+                  className="flex-1 btn-outline text-center"
                   aria-label={`View ${project.title} code`}
                 >
                   View Code
@@ -161,7 +161,7 @@ export default function ProjectsSection() {
                   href={project.demo}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-1 bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  className="flex-1 btn-primary text-center"
                   aria-label={`View ${project.title} demo`}
                 >
                   Live Demo
@@ -176,9 +176,9 @@ export default function ProjectsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-[color:var(--color-muted)] mb-6">
             Want to see more of my work?
           </p>
           <motion.a

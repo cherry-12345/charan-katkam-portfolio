@@ -71,19 +71,19 @@ export default function GallerySection() {
     : galleryItems.filter(item => item.category === filter)
 
   return (
-    <section id="gallery" className="py-20 bg-white dark:bg-gray-900">
+    <section id="gallery" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
       <div className="container-max section-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-medium text-[color:var(--color-text)] mb-4 tracking-tight">
             Interactive Gallery
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto mb-6"></div>
+          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
             Explore my work through interactive previews and detailed project insights
           </p>
         </motion.div>
@@ -93,16 +93,16 @@ export default function GallerySection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-5 mb-14"
         >
           {filters.map((filterItem) => (
             <button
               key={filterItem.id}
               onClick={() => setFilter(filterItem.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 font-mono ${
                 filter === filterItem.id
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? 'bg-[color:var(--color-accent)] text-white shadow-lg'
+                  : 'studio-surface text-[color:var(--color-muted)] hover:border-[color:var(--color-accent)]'
               }`}
             >
               {filterItem.label}
@@ -113,7 +113,7 @@ export default function GallerySection() {
         {/* Gallery Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence>
             {filteredItems.map((item, index) => (
@@ -124,7 +124,7 @@ export default function GallerySection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative studio-surface rounded-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                 onClick={() => setSelectedImage(item.id)}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -142,14 +142,14 @@ export default function GallerySection() {
                       className="object-cover"
                     />
                   </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileHover={{ opacity: 1, scale: 1 }}
                     className="absolute top-4 right-4"
                   >
-                    <div className="bg-white/90 dark:bg-gray-900/90 p-2 rounded-full backdrop-blur-sm">
-                      <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="bg-[color:var(--color-surface)]/90 p-2 rounded-full backdrop-blur-sm border border-[color:var(--color-border)]">
+                      <svg className="w-5 h-5 text-[color:var(--color-text)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                       </svg>
                     </div>
@@ -157,17 +157,17 @@ export default function GallerySection() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-medium text-[color:var(--color-text)] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  <p className="text-[color:var(--color-muted)] mb-4">
                     {item.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {item.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full"
+                        className="tag-chip"
                       >
                         {tech}
                       </span>
@@ -193,7 +193,7 @@ export default function GallerySection() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
-                className="bg-white dark:bg-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                className="studio-surface rounded-md max-w-4xl w-full max-h-[90vh] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {(() => {
@@ -212,17 +212,17 @@ export default function GallerySection() {
                         />
                       </div>
                       <div className="p-8">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-4">
                           {item.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
+                        <p className="text-[color:var(--color-muted)] mb-6">
                           {item.description}
                         </p>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {item.tech.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full"
+                              className="tag-chip"
                             >
                               {tech}
                             </span>
