@@ -7,12 +7,12 @@ export default function ProjectsSection() {
     {
       id: 1,
       title: 'SmartSDLC',
-      description: 'AI-Enhanced Software Development Lifecycle platform that streamlines project management with intelligent automation, real-time collaboration, and predictive analytics.',
+      description: 'Internship MVP for an AI-Enhanced SDLC platform focused on automating requirement checks, task routing, and early risk signals to reduce QA effort and rework.',
       tech: ['React', 'Node.js', 'Express', 'Gemini AI', 'JWT'],
       features: ['AI-powered insights', 'Task automation', 'Team collaboration', 'Progress tracking'],
       github: 'https://github.com/cherry-12345/SmartSDLC-AI-Enhanced-Software-Development-Lifecycle',
       demo: '#',
-      status: 'In Development'
+      status: 'Completed'
     },
     {
       id: 2,

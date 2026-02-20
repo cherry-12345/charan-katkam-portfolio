@@ -65,15 +65,16 @@ export default function AboutSection() {
             className="space-y-10"
           >
             <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
-              I'm a passionate Full Stack Developer with a strong focus on AI integration and modern web technologies. 
-              Currently pursuing my B.Tech in Computer Science Engineering at Sreenidhi Institute of Science and Technology, 
+              I'm a passionate Full Stack Developer with a strong focus on AI integration and modern web technologies.
+              Currently pursuing my B.Tech in Computer Science Engineering at G. Pullaiah College of Engineering and Technology,
               I combine academic knowledge with practical experience to create innovative solutions.
             </p>
 
             <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
-              My expertise spans across frontend frameworks like React and Next.js, backend technologies, 
-              and AI/ML implementations. I enjoy building user-centric applications that solve real-world problems 
-              while maintaining clean, efficient code and exceptional user experiences.
+              My expertise spans across frontend frameworks like React and Next.js, backend technologies,
+              and AI/ML implementations. I build AI tools that make developers faster, focusing on measurable outcomes
+              like reducing QA effort and catching requirement risks early. I do not ship features without a number
+              attached to the impact.
             </p>
 
             {/* Quick Facts */}
