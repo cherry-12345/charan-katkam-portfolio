@@ -14,7 +14,7 @@ export default function SkillsSection() {
     },
     {
       title: 'Backend & Tools',
-      skills: ['Node.js', 'MySQL', 'Git', 'GitHub', 'VS Code', 'Jupyter', 'REST APIs']
+      skills: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'VS Code', 'Jupyter', 'REST APIs']
     }
   ]
 
