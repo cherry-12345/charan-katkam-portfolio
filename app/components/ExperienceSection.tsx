@@ -8,7 +8,7 @@ export default function ExperienceSection() {
       id: 1,
       role: 'AI SDLC Intern',
       company: 'Internship Project',
-      period: '2024',
+      period: '2025',
       type: 'Internship',
       description: 'Developed SmartSDLC, an AI-powered Gradio application that automates critical SDLC phases using IBM Granite 3.3 AI model.',
       achievements: [
