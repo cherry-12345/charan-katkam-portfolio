@@ -10,14 +10,16 @@ export default function ExperienceSection() {
       company: 'Internship Project',
       period: '2024',
       type: 'Internship',
-      description: 'Developed SmartSDLC, an AI-enhanced Software Development Lifecycle platform focused on automation and early risk detection.',
+      description: 'Developed SmartSDLC, an AI-powered Gradio application that automates critical SDLC phases using IBM Granite 3.3 AI model.',
       achievements: [
-        'Built AI-powered requirement check module using Gemini that flags risky requirements before development, reducing potential rework by catching ambiguities early',
-        'Implemented automated task routing system that assigns tickets to appropriate team members based on skillset and workload, improving sprint planning efficiency',
-        'Developed real-time progress tracking dashboard with early risk signals for project managers, enabling proactive intervention on at-risk deliverables',
-        'Integrated JWT authentication and role-based access control for secure team collaboration'
+        'Built AI-powered requirement classification module from PDF documents using IBM Granite 3.3, automatically categorizing requirements by type (functional, non-functional, constraints)',
+        'Developed automated code generation system that produces Python code from natural language descriptions, accelerating development workflow',
+        'Implemented intelligent bug fixing module that analyzes error messages, identifies root causes, and generates corrected code with explanations',
+        'Created Pytest-based test case generation system that automatically produces unit tests for given code, improving code coverage and quality',
+        'Designed code summarization feature that converts technical code into clear natural language explanations for documentation',
+        'Integrated AI chatbot for real-time developer guidance on SDLC best practices and technical queries'
       ],
-      tech: ['React', 'Node.js', 'Express', 'Gemini AI', 'JWT', 'MongoDB']
+      tech: ['Python', 'Gradio', 'IBM Granite AI', 'Hugging Face', 'Google Colab', 'PyPDF2', 'Transformers']
     }
   ]
 

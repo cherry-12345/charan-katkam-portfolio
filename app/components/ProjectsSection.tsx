@@ -7,9 +7,9 @@ export default function ProjectsSection() {
     {
       id: 1,
       title: 'SmartSDLC',
-      description: 'AI-Enhanced SDLC platform that automates requirement validation and task routing. Built AI module using Gemini that flags risky requirements before development, reducing potential rework. Implemented automated task assignment based on team skillsets.',
-      tech: ['React', 'Node.js', 'Express', 'Gemini AI', 'JWT'],
-      features: ['AI-powered requirement validation', 'Automated task routing', 'Team collaboration', 'Real-time risk signals'],
+      description: 'An AI-powered Gradio application that automates key SDLC phases — including requirement classification, code generation, bug fixing, test case creation, and code summarization — using IBM Granite 3.3 AI model via Hugging Face.',
+      tech: ['Python', 'Gradio', 'IBM Granite AI', 'Hugging Face', 'Google Colab', 'PyPDF2', 'Transformers'],
+      features: ['Requirement classification from PDF', 'AI-powered code generation', 'Automated bug fixing & explanation', 'Pytest-based test case generation', 'Code summarization in natural language', 'AI chatbot for developer guidance'],
       github: 'https://github.com/cherry-12345/SmartSDLC-AI-Enhanced-Software-Development-Lifecycle',
       demo: null,
       status: 'Completed'
