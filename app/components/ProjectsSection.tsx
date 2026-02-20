@@ -7,19 +7,19 @@ export default function ProjectsSection() {
     {
       id: 1,
       title: 'SmartSDLC',
-      description: 'Internship MVP for an AI-Enhanced SDLC platform focused on automating requirement checks, task routing, and early risk signals to reduce QA effort and rework.',
+      description: 'AI-Enhanced SDLC platform that automates requirement validation and task routing. Built AI module using Gemini that flags risky requirements before development, reducing potential rework. Implemented automated task assignment based on team skillsets.',
       tech: ['React', 'Node.js', 'Express', 'Gemini AI', 'JWT'],
-      features: ['AI-powered insights', 'Task automation', 'Team collaboration', 'Progress tracking'],
+      features: ['AI-powered requirement validation', 'Automated task routing', 'Team collaboration', 'Real-time risk signals'],
       github: 'https://github.com/cherry-12345/SmartSDLC-AI-Enhanced-Software-Development-Lifecycle',
-      demo: '#',
+      demo: null,
       status: 'Completed'
     },
     {
       id: 2,
       title: 'AJ Abhi Jewels',
-      description: 'Full-stack e-commerce platform for jewelry retail featuring product catalog, shopping cart, secure checkout, and responsive design.',
+      description: 'Full-stack e-commerce platform with end-to-end shopping flow: browse catalog → add to cart → secure Razorpay checkout. Designed to handle 100+ jewelry products with category filtering, user authentication, and order tracking.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT'],
-      features: ['Product catalog', 'Shopping cart', 'User authentication', 'Order management'],
+      features: ['Product catalog with filtering', 'Shopping cart management', 'Secure payment integration', 'Order tracking'],
       github: 'https://github.com/cherry-12345/Abhi-Jewels',
       demo: 'https://abhi-jewels.vercel.app',
       status: 'Completed'
@@ -27,21 +27,21 @@ export default function ProjectsSection() {
     {
       id: 3,
       title: 'Air Cursor Using Hand Gestures',
-      description: 'Computer vision application enabling touchless cursor control through real-time hand gesture recognition using OpenCV and MediaPipe.',
+      description: 'Computer vision application for touchless cursor control using hand gestures. Achieves real-time tracking at 20+ FPS with MediaPipe hand detection, supporting click, drag, and scroll gestures for hands-free computer interaction.',
       tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy', 'PyAutoGUI'],
-      features: ['Hand tracking', 'Gesture recognition', 'Cursor control', 'Click detection'],
+      features: ['Real-time hand tracking (20+ FPS)', 'Multi-gesture recognition', 'Cursor control automation', 'Click & drag detection'],
       github: 'https://github.com/cherry-12345/Air-Cursor-Using-Hand-Gestures',
-      demo: '#',
+      demo: null,
       status: 'Completed'
     },
     {
       id: 4,
       title: 'Music Streaming Website',
-      description: 'Full-featured music streaming platform with playlist management, audio controls, and modern user interface design.',
+      description: 'Music streaming platform supporting playlists and search over 50+ tracks. Features custom audio player with controls, playlist management, and responsive UI optimized with lazy loading for smooth performance.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Web Audio API'],
-      features: ['Audio streaming', 'Playlist creation', 'Search functionality', 'Responsive UI'],
+      features: ['Audio streaming player', 'Playlist creation & management', 'Search over 50+ tracks', 'Lazy-loaded responsive UI'],
       github: 'https://github.com/cherry-12345/My-Music-Demo-Project',
-      demo: '#',
+      demo: null,
       status: 'Completed'
     }
   ]
@@ -152,20 +152,22 @@ export default function ProjectsSection() {
                   href={project.github}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-1 btn-outline text-center"
+                  className={`${project.demo ? 'flex-1' : 'w-full'} btn-outline text-center`}
                   aria-label={`View ${project.title} code`}
                 >
                   View Code
                 </motion.a>
-                <motion.a
-                  href={project.demo}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1 btn-primary text-center"
-                  aria-label={`View ${project.title} demo`}
-                >
-                  Live Demo
-                </motion.a>
+                {project.demo && (
+                  <motion.a
+                    href={project.demo}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 btn-primary text-center"
+                    aria-label={`View ${project.title} demo`}
+                  >
+                    Live Demo
+                  </motion.a>
+                )}
               </div>
             </motion.div>
           ))}

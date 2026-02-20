@@ -80,6 +80,13 @@ export default function HeroSection() {
             Building intelligent, fast, and user-focused web experiences with modern technologies and AI integration.
           </motion.p>
 
+          <motion.p
+            variants={itemVariants}
+            className="text-base md:text-lg text-[color:var(--color-accent)] max-w-2xl mx-auto font-medium"
+          >
+            🚀 Actively seeking 2026 Software / Full Stack / AI internship opportunities (Hyderabad, Bangalore, or remote)
+          </motion.p>
+
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"

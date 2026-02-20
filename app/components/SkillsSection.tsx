@@ -109,13 +109,10 @@ export default function SkillsSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               'Responsive Design',
-              'API Integration',
+              'REST API Integration',
               'Database Design',
-              'Version Control',
-              'Agile Development',
-              'Problem Solving',
-              'Team Collaboration',
-              'Continuous Learning'
+              'Git & Version Control',
+              'Agile Teamwork'
             ].map((skill, index) => (
               <motion.div
                 key={skill}

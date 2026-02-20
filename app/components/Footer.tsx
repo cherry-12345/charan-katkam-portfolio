@@ -57,8 +57,7 @@ export default function Footer() {
               Charan Katkam
             </h3>
             <p className="text-[color:var(--color-muted)] leading-relaxed">
-              Full Stack Developer passionate about creating intelligent, 
-              user-focused web experiences with modern technologies and AI integration.
+              Full Stack Developer building intelligent web experiences with modern technologies and AI integration.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
@@ -111,7 +110,7 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold">Get In Touch</h4>
             <div className="space-y-2 text-[color:var(--color-muted)]">
-              <p>📧 charancherrykatkam@gmail.com</p>
+              <p>📧 charankatkam@gmail.com</p>
               <p>📍 Hyderabad, India</p>
               <p>🎓 B.Tech CSE Student</p>
             </div>

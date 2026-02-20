@@ -10,8 +10,8 @@ export default function ContactSection() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'charancherrykatkam@gmail.com',
-      link: 'mailto:charancherrykatkam@gmail.com'
+      value: 'charankatkam@gmail.com',
+      link: 'mailto:charankatkam@gmail.com'
     },
     {
       icon: '💼',
