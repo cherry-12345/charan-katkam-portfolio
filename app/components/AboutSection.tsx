@@ -41,8 +41,14 @@ export default function AboutSection() {
             className="flex justify-center lg:justify-start"
           >
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-                <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-700">
+              <div
+                className="w-80 h-80 rounded-full p-1"
+                style={{
+                  background:
+                    'linear-gradient(145deg, var(--color-accent), var(--color-accent-alt))',
+                }}
+              >
+                <div className="w-full h-full rounded-full overflow-hidden bg-[color:var(--color-surface)]">
                   <Image
                     src="/photo.png"
                     alt="Charan Katkam"
@@ -66,14 +72,18 @@ export default function AboutSection() {
           >
             <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
               I'm a passionate Full Stack Developer with a strong focus on AI integration and modern web technologies.
-              Currently pursuing my B.Tech in Computer Science Engineering at G. Pullaiah College of Engineering and Technology,
+              Currently pursuing my B.Tech in Computer Science Engineering (Class of 2026) at G. Pullaiah College of Engineering and Technology,
               I combine academic knowledge with hands-on development to deliver impactful solutions.
             </p>
 
             <p className="text-lg text-[color:var(--color-muted)] leading-relaxed">
-              My expertise spans frontend frameworks like React and Next.js, backend technologies including Node.js and databases,
-              and AI/ML implementations using TensorFlow and OpenCV. I build AI tools that make developers faster, focusing on measurable outcomes
-              like reducing QA effort and catching requirement risks early. Every feature I ship has a number attached to its impact.
+              I got into AI tooling because I wanted to see how much developer effort could be automated — and SmartSDLC was my answer to that question.
+              My expertise spans React, Next.js, Node.js, and AI/ML implementations using TensorFlow and OpenCV. I build tools that make developers faster,
+              focusing on measurable outcomes like reducing QA effort and catching requirement risks early.
+            </p>
+
+            <p className="text-base text-[color:var(--color-accent)] font-medium mt-4">
+              Currently Learning: LangChain, RAG pipelines, and advanced prompt engineering for production AI systems.
             </p>
 
             {/* Quick Facts */}
@@ -85,7 +95,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="studio-surface p-4 rounded-md text-center hover:shadow-lg transition-shadow"
+                  className="studio-surface p-4 rounded-2xl text-center hover:shadow-lg transition-shadow"
                 >
                   <div className="text-2xl mb-2">{fact.icon}</div>
                   <div className="font-semibold text-[color:var(--color-text)] text-xs uppercase tracking-[0.2em] font-mono">

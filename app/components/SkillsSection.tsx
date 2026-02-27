@@ -5,15 +5,23 @@ import { motion } from 'framer-motion'
 export default function SkillsSection() {
   const skillCategories = [
     {
+      title: 'Programming',
+      code: 'PG',
+      skills: ['Java', 'Python', 'JavaScript', 'TypeScript']
+    },
+    {
       title: 'Frontend',
+      code: 'UI',
       skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'TypeScript']
     },
     {
       title: 'AI / ML',
+      code: 'AI',
       skills: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'Prompt Engineering']
     },
     {
       title: 'Backend & Tools',
+      code: 'BE',
       skills: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'VS Code', 'Jupyter', 'REST APIs']
     }
   ]
@@ -57,20 +65,20 @@ export default function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-10"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-10"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               variants={itemVariants}
-              className="studio-surface rounded-md p-6 shadow-lg hover:shadow-xl transition-shadow"
+              className="studio-surface rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-medium text-[color:var(--color-text)]">
                   {category.title}
                 </h3>
                 <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-muted)] font-mono">
-                  {category.title === 'Frontend' ? 'UI' : category.title === 'AI / ML' ? 'AI' : 'BE'}
+                  {category.code}
                 </span>
               </div>
               
@@ -119,7 +127,7 @@ export default function SkillsSection() {
                 variants={itemVariants}
                 whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                className="studio-surface p-4 rounded-md text-center shadow-md hover:shadow-xl transition-all cursor-pointer hover:border-[color:var(--color-accent)]"
+                className="studio-surface p-4 rounded-2xl text-center shadow-md hover:shadow-xl transition-all cursor-pointer hover:border-[color:var(--color-accent)]"
               >
                 <span className="text-[color:var(--color-text)] font-medium">
                   {skill}

@@ -101,7 +101,7 @@ export default function GallerySection() {
               onClick={() => setFilter(filterItem.id)}
               className={`px-6 py-2 rounded-full text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 font-mono ${
                 filter === filterItem.id
-                  ? 'bg-[color:var(--color-accent)] text-white shadow-lg'
+                  ? 'bg-[color:var(--color-accent)] text-[color:var(--color-on-accent)] shadow-lg'
                   : 'studio-surface text-[color:var(--color-muted)] hover:border-[color:var(--color-accent)]'
               }`}
             >
@@ -124,7 +124,7 @@ export default function GallerySection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative studio-surface rounded-md overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative studio-surface rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                 onClick={() => setSelectedImage(item.id)}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -142,7 +142,7 @@ export default function GallerySection() {
                       className="object-cover"
                     />
                   </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-bg)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileHover={{ opacity: 1, scale: 1 }}
@@ -186,14 +186,14 @@ export default function GallerySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-[color:var(--color-bg)]/88 z-50 flex items-center justify-center p-4"
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
-                className="studio-surface rounded-md max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                className="studio-surface rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {(() => {

@@ -2,48 +2,113 @@
 
 import { motion } from 'framer-motion'
 
+type ProjectLink = {
+  label: string
+  href: string
+  primary?: boolean
+}
+
+type Project = {
+  id: number
+  title: string
+  description: string
+  tech: string[]
+  impact: string[]
+  links: ProjectLink[]
+  status: 'Live' | 'Demo Ready' | 'Next Step'
+  note?: string
+}
+
 export default function ProjectsSection() {
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: 'SmartSDLC',
-      description: 'An AI-powered Gradio application that automates key SDLC phases — including requirement classification, code generation, bug fixing, test case creation, and code summarization — using IBM Granite 3.3 AI model via Hugging Face.',
-      tech: ['Python', 'Gradio', 'IBM Granite AI', 'Hugging Face', 'Google Colab', 'PyPDF2', 'Transformers'],
-      features: ['Requirement classification from PDF', 'AI-powered code generation', 'Automated bug fixing & explanation', 'Pytest-based test case generation', 'Code summarization in natural language', 'AI chatbot for developer guidance'],
-      github: 'https://github.com/cherry-12345/SmartSDLC-AI-Enhanced-Software-Development-Lifecycle',
-      demo: null,
-      status: 'Completed'
+      description:
+        'AI-powered SDLC assistant that automates critical SDLC phases, reducing manual QA effort by around 60% and classifying requirements with 95%+ accuracy.',
+      tech: ['Python', 'Gradio', 'IBM Granite AI', 'Hugging Face', 'Transformers', 'PyPDF2', 'Pytest'],
+      impact: [
+        'Reduced manual QA effort by around 60% via automated test-case generation.',
+        'Reached 95%+ PDF requirement classification accuracy in module validation runs.',
+        'Delivered 2-4 second response windows for key module actions.',
+      ],
+      links: [
+        {
+          label: 'Live Demo Video',
+          href: 'https://drive.google.com/file/d/1Mz0vxiBIaC5eYsgmS9didfk1GCYbItHp/view',
+          primary: true,
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/cherry-12345/SmartSDLC-AI-Enhanced-Software-Development-Lifecycle',
+        },
+      ],
+      status: 'Demo Ready',
     },
     {
       id: 2,
       title: 'AJ Abhi Jewels',
-      description: 'Full-stack e-commerce platform with end-to-end shopping flow: browse catalog → add to cart → secure Razorpay checkout. Designed to handle 100+ jewelry products with category filtering, user authentication, and order tracking.',
-      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT'],
-      features: ['Product catalog with filtering', 'Shopping cart management', 'Secure payment integration', 'Order tracking'],
-      github: 'https://github.com/cherry-12345/Abhi-Jewels',
-      demo: 'https://abhi-jewels.vercel.app',
-      status: 'Completed'
+      description:
+        'Full-stack e-commerce platform that handles 100+ jewelry products with sub-2 second load time and secure Razorpay checkout for end-to-end order flow.',
+      tech: ['Next.js', 'React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'TypeScript'],
+      impact: [
+        'Handles 100+ SKU catalog navigation with category and price filters.',
+        'Maintains sub-2 second load times on critical product browsing paths.',
+        'Supports complete user flow: discovery -> cart -> payment -> order follow-up.',
+      ],
+      links: [
+        {
+          label: 'Open Live Demo',
+          href: 'https://abhi-jewels.vercel.app',
+          primary: true,
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/cherry-12345/Abhi-Jewels',
+        },
+      ],
+      status: 'Live',
     },
     {
       id: 3,
       title: 'Air Cursor Using Hand Gestures',
-      description: 'Computer vision application for touchless cursor control using hand gestures. Achieves real-time tracking at 20+ FPS with MediaPipe hand detection, supporting click, drag, and scroll gestures for hands-free computer interaction.',
+      description:
+        'Computer vision project for touchless cursor control with real-time tracking at 20+ FPS and under 50ms gesture response latency.',
       tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy', 'PyAutoGUI'],
-      features: ['Real-time hand tracking (20+ FPS)', 'Multi-gesture recognition', 'Cursor control automation', 'Click & drag detection'],
-      github: 'https://github.com/cherry-12345/Air-Cursor-Using-Hand-Gestures',
-      demo: null,
-      status: 'Completed'
+      impact: [
+        'Real-time landmark tracking pipeline for gesture-to-cursor mapping.',
+        'Supports drawing, erase, and interaction actions through tracked hand states.',
+        'Built as an accessibility-first interaction experiment for hands-free control.',
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/cherry-12345/Air-Cursor-Using-Hand-Gestures',
+          primary: true,
+        },
+      ],
+      status: 'Demo Ready',
     },
     {
       id: 4,
       title: 'Music Streaming Website',
-      description: 'Music streaming platform supporting playlists and search over 50+ tracks. Features custom audio player with controls, playlist management, and responsive UI optimized with lazy loading for smooth performance.',
+      description:
+        'Music platform with lazy-loaded UI supporting 50+ tracks and under 1.5 second initial load time.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Web Audio API'],
-      features: ['Audio streaming player', 'Playlist creation & management', 'Search over 50+ tracks', 'Lazy-loaded responsive UI'],
-      github: 'https://github.com/cherry-12345/My-Music-Demo-Project',
-      demo: null,
-      status: 'Completed'
-    }
+      impact: [
+        'Search and playlist interaction across 50+ tracks.',
+        'Custom player controls for smoother in-page listening flow.',
+        'Structured for fast static deployment on GitHub Pages/Netlify.',
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/cherry-12345/My-Music-Demo-Project',
+          primary: true,
+        },
+      ],
+      status: 'Demo Ready',
+    },
   ]
 
   const containerVariants = {
@@ -51,15 +116,24 @@ export default function ProjectsSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.16,
+      },
+    },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
   }
+
+  const statusClass = (status: Project['status']) => {
+    if (status === 'Live') return 'border-[color:var(--color-accent-alt)] text-[color:var(--color-accent-alt)]'
+    if (status === 'Demo Ready') return 'border-[color:var(--color-accent)] text-[color:var(--color-accent)]'
+    return 'border-[color:var(--color-muted)] text-[color:var(--color-muted)]'
+  }
+
+  const opensInNewTab = (href: string) =>
+    href.startsWith('http') || href.startsWith('/media/') || href.startsWith('/projects/')
 
   return (
     <section id="projects" className="py-24 md:py-28 bg-[color:var(--color-bg)]">
@@ -75,9 +149,45 @@ export default function ProjectsSection() {
             Featured Projects
           </h2>
           <div className="w-24 h-1 bg-[color:var(--color-accent)] mx-auto mb-6"></div>
-          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
-            A showcase of my technical expertise and problem-solving capabilities across various domains
+          <p className="text-lg text-[color:var(--color-muted)] max-w-3xl mx-auto">
+            Built projects with measurable outcomes, real media proof, and direct demo access.
           </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+        >
+          {projects.map((project) => {
+            const primaryLink = project.links.find((link) => link.primary) ?? project.links[0]
+            const opensExternally = opensInNewTab(primaryLink.href)
+
+            return (
+              <motion.article
+                key={`availability-${project.id}`}
+                variants={itemVariants}
+                className="studio-surface rounded-2xl p-4"
+              >
+                <p className="text-sm font-medium text-[color:var(--color-text)] mb-2">{project.title}</p>
+                <span
+                  className={`inline-flex items-center px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] font-mono rounded-full border ${statusClass(project.status)}`}
+                >
+                  {project.status}
+                </span>
+                <a
+                  href={primaryLink.href}
+                  target={opensExternally ? '_blank' : undefined}
+                  rel={opensExternally ? 'noopener noreferrer' : undefined}
+                  className="block mt-3 text-sm text-[color:var(--color-accent)] hover:underline"
+                >
+                  {primaryLink.label}
+                </a>
+              </motion.article>
+            )
+          })}
         </motion.div>
 
         <motion.div
@@ -87,115 +197,79 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-10"
         >
-          {projects.map((project, index) => (
-            <motion.div
+          {projects.map((project) => (
+            <motion.article
               key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="studio-surface rounded-md p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
+              whileHover={{ y: -4 }}
+              className="studio-surface rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
             >
-              {/* Project Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-2">
-                    {project.title}
-                  </h3>
-                  <span className={`inline-flex items-center gap-2 px-3 py-1 text-xs uppercase tracking-[0.25em] font-mono rounded-full border ${
-                    project.status === 'Completed' 
-                      ? 'border-emerald-500/40 text-emerald-400'
-                      : 'border-amber-500/40 text-amber-400'
-                  }`}>
-                    {project.status}
-                  </span>
-                </div>
-                <div className="text-3xl">
-                  {index === 0 ? '🤖' : index === 1 ? '💎' : index === 2 ? '👋' : '🎵'}
-                </div>
+              <div className="flex items-start justify-between mb-5 gap-4">
+                <h3 className="text-2xl font-medium text-[color:var(--color-text)]">{project.title}</h3>
+                <span
+                  className={`inline-flex items-center gap-2 px-3 py-1 text-xs uppercase tracking-[0.25em] font-mono rounded-full border ${statusClass(project.status)}`}
+                >
+                  {project.status}
+                </span>
               </div>
 
-              {/* Description */}
-              <p className="text-[color:var(--color-muted)] mb-6 leading-relaxed">
-                {project.description}
-              </p>
+              <p className="text-[color:var(--color-muted)] mb-5 leading-relaxed">{project.description}</p>
 
-              {/* Features */}
               <div className="mb-6">
-                <h4 className="font-medium text-[color:var(--color-text)] mb-3">Key Features:</h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {project.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-[color:var(--color-muted)]">
-                      <span className="w-2 h-2 bg-[color:var(--color-accent)] rounded-full mr-2 flex-shrink-0"></span>
-                      {feature}
+                <h4 className="font-medium text-[color:var(--color-text)] mb-3">Impact Metrics:</h4>
+                <ul className="space-y-2">
+                  {project.impact.map((item) => (
+                    <li key={item} className="flex items-start text-sm text-[color:var(--color-muted)]">
+                      <span className="w-2 h-2 bg-[color:var(--color-accent)] rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                      {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Tech Stack */}
               <div className="mb-6">
                 <h4 className="font-medium text-[color:var(--color-text)] mb-3">Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="tag-chip"
-                    >
+                    <span key={tech} className="tag-chip">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex gap-4">
-                <motion.a
-                  href={project.github}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`${project.demo ? 'flex-1' : 'w-full'} btn-outline text-center`}
-                  aria-label={`View ${project.title} code`}
-                >
-                  View Code
-                </motion.a>
-                {project.demo && (
-                  <motion.a
-                    href={project.demo}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 btn-primary text-center"
-                    aria-label={`View ${project.title} demo`}
+              <div className="flex flex-wrap gap-3">
+                {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={opensInNewTab(link.href) ? '_blank' : undefined}
+                    rel={opensInNewTab(link.href) ? 'noopener noreferrer' : undefined}
+                    className={link.primary ? 'btn-primary text-sm' : 'btn-outline text-sm'}
                   >
-                    Live Demo
-                  </motion.a>
-                )}
+                    {link.label}
+                  </a>
+                ))}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
 
-        {/* Additional Projects CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mt-20"
         >
-          <p className="text-[color:var(--color-muted)] mb-6">
-            Want to see more of my work?
-          </p>
-          <motion.a
+          <p className="text-[color:var(--color-muted)] mb-6">Explore pinned repos, demos, and updated READMEs on GitHub.</p>
+          <a
             href="https://github.com/cherry-12345"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 btn-primary"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            View All Projects on GitHub
-          </motion.a>
+            View GitHub Activity
+          </a>
         </motion.div>
       </div>
     </section>

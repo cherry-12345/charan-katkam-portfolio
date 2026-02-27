@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function Footer() {
@@ -27,6 +28,7 @@ export default function Footer() {
     {
       name: 'Email',
       url: 'mailto:charankatkam@gmail.com',
+      external: false,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -36,10 +38,10 @@ export default function Footer() {
   ]
 
   const quickLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About', href: '/#about' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Contact', href: '/#contact' }
   ]
 
   return (
@@ -64,11 +66,11 @@ export default function Footer() {
                 <motion.a
                   key={link.name}
                   href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={link.external === false ? undefined : '_blank'}
+                  rel={link.external === false ? undefined : 'noopener noreferrer'}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 studio-surface rounded-md transition-colors hover:border-[color:var(--color-accent)]"
+                  className="p-2 studio-surface rounded-2xl transition-colors hover:border-[color:var(--color-accent)]"
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -89,12 +91,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-[color:var(--color-muted)] hover:text-[color:var(--color-text)] transition-colors hover:underline"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -115,16 +117,17 @@ export default function Footer() {
               <p>🎓 B.Tech CSE Student</p>
             </div>
             <motion.a
-              href="/Charan_Resume_Dev.pdf"
-              download
+              href="https://drive.google.com/file/d/1CpPeuG6k6ff6kwvyMjqSlcyvm2WP4Ohr/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 btn-primary text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Download Resume
+              View Resume
             </motion.a>
           </motion.div>
         </div>

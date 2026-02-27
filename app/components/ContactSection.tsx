@@ -79,7 +79,7 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 studio-surface rounded-md hover:shadow-md transition-shadow"
+                  className="flex items-center space-x-4 p-4 studio-surface rounded-2xl hover:shadow-md transition-shadow"
                 >
                   <div className="text-2xl">{info.icon}</div>
                   <div>
@@ -110,7 +110,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="studio-surface p-6 rounded-md"
+              className="studio-surface p-6 rounded-2xl"
             >
               <h4 className="text-lg font-medium text-[color:var(--color-text)] mb-3">
                 Download My Resume
@@ -119,16 +119,17 @@ export default function ContactSection() {
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
               <motion.a
-                href="/Charan_Resume_Dev.pdf"
-                download
+                href="https://drive.google.com/file/d/1CpPeuG6k6ff6kwvyMjqSlcyvm2WP4Ohr/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 btn-primary"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Download Resume
+                View Resume
               </motion.a>
             </motion.div>
           </motion.div>
@@ -138,7 +139,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="studio-surface p-8 rounded-md"
+            className="studio-surface p-8 rounded-2xl"
           >
             <h3 className="text-2xl font-medium text-[color:var(--color-text)] mb-6">
               Send a Message
@@ -154,7 +155,7 @@ export default function ContactSection() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
                   placeholder="Enter your name"
                 />
               </div>
@@ -168,7 +169,8 @@ export default function ContactSection() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
+                  suppressHydrationWarning
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors"
                   placeholder="Enter your email"
                 />
               </div>
@@ -182,7 +184,7 @@ export default function ContactSection() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-[color:var(--color-border)] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] transition-colors resize-none"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>
