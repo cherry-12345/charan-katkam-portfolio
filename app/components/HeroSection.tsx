@@ -129,10 +129,10 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('media')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary"
             >
-              View My Work
+              View Real Demos
             </motion.button>
 
             <motion.button

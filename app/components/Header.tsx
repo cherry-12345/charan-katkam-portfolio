@@ -22,6 +22,7 @@ export default function Header() {
     () => [
       { id: 'about', label: 'About' },
       { id: 'skills', label: 'Skills' },
+      { id: 'media', label: 'Media' },
       { id: 'experience', label: 'Experience' },
       { id: 'projects', label: 'Projects' },
       { id: 'insights', label: 'Insights' },

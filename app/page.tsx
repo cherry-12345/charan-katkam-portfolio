@@ -2,6 +2,7 @@ import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import SkillsSection from './components/SkillsSection'
+import MediaShowcaseSection from './components/MediaShowcaseSection'
 import ExperienceSection from './components/ExperienceSection'
 import ProjectsSection from './components/ProjectsSection'
 import InsightsSection from './components/InsightsSection'
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
+      <MediaShowcaseSection />
       <ExperienceSection />
       <ProjectsSection />
       <InsightsSection />
