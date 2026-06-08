@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { insightPosts } from './data/insightsPosts'
 
-const siteUrl = 'https://www.charankatkam.me/'
+const siteUrl = 'https://www.charankatkam.me'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
