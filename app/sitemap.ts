@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { insightPosts } from './data/insightsPosts'
 
-const siteUrl = 'https://charan-katkam-portfolio.vercel.app'
+const siteUrl = 'https://www.charankatkam.me/'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
