@@ -28,7 +28,10 @@ const monoFont = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://charan-katkam-portfolio.vercel.app'),
+  metadataBase: new URL('https://www.charankatkam.me'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Charan Katkam | Full Stack & AI Developer',
   description:
     'Full Stack Developer and AI Engineer from Hyderabad. Building intelligent web apps with React, Next.js, Python, and IBM Granite AI. Open to 2026 internships.',
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Charan Katkam | Full Stack & AI Developer',
     description: 'Portfolio of Charan Katkam - AI-powered web projects with measurable impact.',
-    url: 'https://charan-katkam-portfolio.vercel.app',
+    url: 'https://www.charankatkam.me',
     siteName: 'Charan Katkam Portfolio',
     images: [
       {
